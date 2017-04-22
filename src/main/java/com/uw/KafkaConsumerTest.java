@@ -27,6 +27,7 @@ public class KafkaConsumerTest {
     }
 
     public List<String> getLatest(int limit){
+        if(limit<=0) return new ArrayList<>();
         Properties props = new Properties();
         props.put("bootstrap.servers", brokers);
         props.put("group.id", consumerGroup);
